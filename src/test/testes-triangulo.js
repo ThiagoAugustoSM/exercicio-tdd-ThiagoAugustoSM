@@ -40,3 +40,48 @@ describe('Verificando se os tamanhos lados são válidos', () => {
     assert.equal(triangulo.valido(), false);
   });
 });
+
+describe('Verificando se é acutangulo', () => {
+  it('Teste: Menor angulo nos lados A e B', () => {
+    let triangulo = new Triangulo(7, 7, 5)
+    assert.equal(triangulo.tipoAngulo(), "Acutangulo");
+  });
+  it('Teste: Menor angulo nos lados B e C', () => {
+    let triangulo = new Triangulo(4, 7, 7)
+    assert.equal(triangulo.tipoAngulo(), "Acutangulo");
+  });
+  it('Teste: Menor angulo nos lados A e C', () => {
+    let triangulo = new Triangulo(7, 4, 7)
+    assert.equal(triangulo.tipoAngulo(), "Acutangulo");
+  });
+});
+
+describe('Verificando se é obtusangulo', () => {
+  it('Teste: Maior angulo nos lados A e B', () => {
+    let triangulo = new Triangulo(4, 5, 7)
+    assert.equal(triangulo.tipoAngulo(), "Obtusangulo");
+  });
+  it('Teste: Menor angulo nos lados B e C', () => {
+    let triangulo = new Triangulo(7, 4, 5)
+    assert.equal(triangulo.tipoAngulo(), "Obtusangulo");
+  });
+  it('Teste: Menor angulo nos lados A e C', () => {
+    let triangulo = new Triangulo(4, 7, 5)
+    assert.equal(triangulo.tipoAngulo(), "Obtusangulo");
+  });
+});
+
+describe('Verificando se é retangulo', () => {
+  it('Teste: Maior angulo nos lados A e B', () => {
+    let triangulo = new Triangulo(3, 4, 5)
+    assert.equal(triangulo.tipoAngulo(), "Retangulo");
+  });
+  it('Teste: Menor angulo nos lados B e C', () => {
+    let triangulo = new Triangulo(5, 4, 3)
+    assert.equal(triangulo.tipoAngulo(), "Retangulo");
+  });
+  it('Teste: Menor angulo nos lados A e C', () => {
+    let triangulo = new Triangulo(3, 5, 4)
+    assert.equal(triangulo.tipoAngulo(), "Retangulo");
+  });
+});
